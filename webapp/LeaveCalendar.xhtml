@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+
+	<ui:define name="pageTitle">
+				HOME PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+
+		<div class="centredZone">
+			<br />
+			<h2>HOME</h2>
+			<br /> <br />
+
+<h:form>
+     <p:calendar id="inline" value="#{CalendarBean.date}"  mode="inline" >
+	<p:ajax  listener="#{CalendarBean.date}" update=":data"/>
+	   <p:ajax  update=":data"/>
+</p:calendar>
+  
+          <p:commandButton value="Search" id="nonAjax" action="#{CalendarBean.Update()}" style="margin-right:20px;" ajax="false" />
+    
+ 
+<p:dataTable id="data" var="leave" value="#{CalendarBean.listLeave}">
+  
+ 
+    <p:column headerText="date debut">
+        <h:outputText value="#{leave.start_date}" />
+    </p:column>
+ 
+    <p:column headerText="date fin">
+        <h:outputText value="#{leave.d_date}" />
+    </p:column>
+    <p:column headerText="ressource name">
+        <h:outputText value="#{leave.ressource.first_name}" />
+    </p:column>
+    <p:column headerText="Type Leave">
+        <h:outputText value="#{leave.type_leave}" />
+    </p:column>
+ 
+   </p:dataTable>
+
+</h:form>
+
+		</div>
+
+	</ui:define>
+
+
+
+</ui:composition>

@@ -1,0 +1,44 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+
+	<ui:define name="pageTitle">
+				HOME PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+
+		<div class="centredZone">
+			<br />
+			<h2>HOME</h2>
+			<br /> <br />
+
+<h:form  id="form">
+
+        <p:calendar id="button1" value="#{LeaveBean1.dayte_deb}" showOn="button" />
+        
+        <p:calendar id="button2" value="#{LeaveBean1.dateFin}" showOn="button" />
+        
+             
+   			 <p:selectOneMenu  value="#{LeaveBean1.typeLeave}" >
+    		    <f:selectItem itemLabel="Maternity" itemValue="0" />
+  			      <f:selectItem itemLabel="Vacation" itemValue="1" />
+    		    <f:selectItem itemLabel="Disease" itemValue="2" />
+  		  </p:selectOneMenu>
+  		  
+                 <h:outputText value="#{LeaveBean1.leave.ressource.first_name}" />
+
+                         <p:commandButton value="Modifier" id="nonAjax" action="#{LeaveBean1.modify()}" style="margin-right:20px;" ajax="false" />
+        
+        
+</h:form>
+		</div>
+
+	</ui:define>
+
+
+
+</ui:composition>

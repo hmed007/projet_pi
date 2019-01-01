@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+
+	<ui:define name="pageTitle">
+				HOME PAGE
+			</ui:define>
+	<ui:define name="pageContent">
+
+
+		<div class="centredZone">
+			<br />
+			<h2>HOME</h2>
+			<br /> <br />
+
+
+<h:form>
+<p:dataTable var="leave" value="#{StatBean.listStat}">
+  
+    <p:column headerText="ressource name">
+        <h:outputText value="#{leave.ressource.first_name}" />
+    </p:column>
+ 
+    <p:column headerText="Total">
+        <h:outputText value="#{leave.dayNumber}" />
+    </p:column>
+ 
+    
+   </p:dataTable>
+</h:form>
+		</div>
+
+	</ui:define>
+
+
+
+</ui:composition>
