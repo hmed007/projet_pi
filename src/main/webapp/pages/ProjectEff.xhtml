@@ -1,0 +1,53 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+	<ui:define name="title">Welcome</ui:define>
+	<ui:define name="content">
+<!-- welcome #{loginBean.employe.nom} #{loginBean.employe.prenom}<br /> -->
+		<br />
+		
+		<br />
+		<br />
+<style type="text/css">
+     .value {
+        font-weight: bold;
+    }
+     
+    .ui-carousel {
+        margin-bottom: 20px;
+    }
+</style>
+		<h:form id="form">
+    <p:carousel value="#{consommationBean.getAllProjects}" headerText="Responsive" 
+    var="car" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+            <f:facet name="header">
+            </f:facet>
+ 
+            <h:outputText value="Id:" />
+            <h:outputText value="#{car.project_name}" />
+ 
+            <h:outputText value="Year" />
+            <h:outputText value="#{consommationBean.getmethodeeffiproject(car.projectId)}" />
+            
+            
+        </p:panelGrid>
+ 
+        <f:facet name="footer">
+                In total there are 10 cars.
+        </f:facet>
+    </p:carousel>
+
+		</h:form>
+		<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="70"
+  aria-valuemin="0" aria-valuemax="100" style="width:70%">
+    70%
+  </div>
+</div>
+	</ui:define>
+</ui:composition>
+

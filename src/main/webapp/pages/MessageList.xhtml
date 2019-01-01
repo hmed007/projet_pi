@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/template/template.xhtml">
+	<ui:define name="title">Welcome</ui:define>
+	<ui:define name="content">
+<!-- welcome #{loginBean.employe.nom} #{loginBean.employe.prenom}<br /> -->
+		<br />
+		
+		<br />
+		<br />
+
+	
+						The Best Resource :  <h:outputText value="#{messagebean.bestResource}" />
+
+	
+		<h:outputText value="#{message.bestResource}" />
+		<h:form id="form">
+		<h:selectOneMenu value="#{messagebean.object}">
+					<f:selectItem itemLabel="Selectionner le type de msg " itemValue="" />
+					<f:selectItem itemValue="Satisfaction" />
+					<f:selectItem itemValue="Probleme technique" />
+					<f:selectItem itemValue="Reclamation" />
+				</h:selectOneMenu>
+				<h:commandButton action="#{messagebean.filter()}" value="filter" />
+			<h:dataTable value="#{messagebean.allmessage}" var="message" border="1">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="object" />
+					</f:facet>
+					<h:outputText value="#{message.object}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="body" />
+					</f:facet>
+					<h:outputText value="#{message.body}" />
+				</h:column>
+				
+				
+			</h:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+

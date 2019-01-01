@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Etat', 'Nubmer Projects'],
+          ['in progress projects', #{consommationBean.inprogressprojects}],
+          ['New projects', #{consommationBean.fi}],
+          ['finished projects', #{consommationBean.finishedprojects}]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Number of projects with their status',
+            subtitle: '',
+            
+          },
+          bars: 'verticale' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px;"></div>
+    <p:commandButton value="Print" type="button" icon="pi pi-print" style="display:block;margin-bottom: 20px">
+	</p:commandButton>
+ 
+<p:graphicImage id="image" name="demo/images/nature/nature10.jpg" /> 
+  </body>
+</html>

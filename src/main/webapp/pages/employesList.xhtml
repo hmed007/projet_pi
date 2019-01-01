@@ -1,0 +1,96 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+	<ui:define name="title">Welcome</ui:define>
+	<ui:define name="content">
+<!-- welcome #{loginBean.employe.nom} #{loginBean.employe.prenom}<br /> -->
+		<br />
+		
+		<br />
+		<br />
+<style type="text/css">
+     .value {
+        font-weight: bold;
+    }
+     
+    .ui-carousel {
+        margin-bottom: 20px;
+    }
+    canvas { background-color : #eee;
+}
+</style>
+		<h:form id="form">
+    <p:carousel value="#{consommationBean.getAllMandates}" headerText="Responsive" 
+    var="car" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+            <f:facet name="header">
+            </f:facet>
+ 
+ 		<h:outputText value="Id Mandate:" />
+            <h:outputText value="#{car.mandateId}" />
+            
+            <h:outputText value="Start Date:" />
+            <h:outputText value="#{car.start_date}" />
+ 
+            <h:outputText value="End Date" />
+            <h:outputText value="#{car.endDate}" />
+ 
+            <h:outputText value="actual End Date" />
+            <h:outputText value="#{car.actualEndDate}" />
+            
+            
+            <h:outputText value="Efficiency" />
+            <h:outputText value="#{consommationBean.getmethodeeffimandate(car.mandateId)} %" />
+            
+        </p:panelGrid>
+ 
+        <f:facet name="footer">
+                In total there are 10 cars
+        </f:facet>
+    </p:carousel>
+    
+
+		</h:form>
+		
+		<script type="text/javascript">
+var options = {
+  type: 'line',
+  data: {
+    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    datasets: [
+	    {
+	      label: '# of Votes',
+	      data: [12, 19, 3, 5, 2, 3],
+      	borderWidth: 1
+    	},	
+			{
+				label: '# of Points',
+				data: [7, 11, 5, 8, 3, 7],
+				borderWidth: 1
+			}
+		]
+  },
+  options: {
+  	scales: {
+    	yAxes: [{
+        ticks: {
+					reverse: false
+        }
+      }]
+    }
+  }
+}
+
+var ctx = document.getElementById('chartJSContainer').getContext('2d');
+new Chart(ctx, options);
+</script>
+    <canvas id="chartJSContainer" width="600" height="400"></canvas>
+
+		
+
+	</ui:define>
+</ui:composition>
+
