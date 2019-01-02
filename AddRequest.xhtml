@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:t="http://xmlns.jcp.org/jsf/passthrough">
+
+<head>
+    <title>Replenish HR Management Category Bootstrap responsive Web Template | Candidates Single:: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Replenish a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="../resources/user/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/user/css/style6.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/user/css/style.css" rel='stylesheet' type='text/css' />
+    <link href="../resources/user/css/fontawesome-all.css" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet" />
+    <link href="//fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- banner-inner -->
+    <div id="demo-1" class="page-content">
+        <div class="dotts">
+            <div class="header-top">
+                <header>
+                    <div class="top-head ml-lg-auto text-center">
+                        <div class="row top-vl">
+
+
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <div class="logo">
+                            <h1>
+                                <a class="navbar-brand" href="index.html">
+                                    <i class="fab fa-codepen"></i> LEVIO
+                                </a>
+                            </h1>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon">
+                                <i class="fas fa-bars"></i>
+                            </span>
+
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-lg-auto text-center">
+
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link" href="">Inbox</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </nav>
+                </header>
+            </div>
+            <!--/banner-info-w3layouts-->
+            <div class="banner-info-w3layouts text-center">
+            </div>
+            <!--//banner-info-w3layouts-->
+        </div>
+    </div>
+    <ol class="breadcrumb justify-content-left">
+        <li class="breadcrumb-item">
+          
+        </li>
+        <li class="breadcrumb-item active">
+            Create request
+        </li>
+    </ol>
+    <!-- banner-text -->
+    <!--/process-->
+    <section class="banner-bottom-wthree py-lg-5 py-md-5 py-3">
+        <div class="container">
+           
+            <div class="inner-sec-w3ls py-lg-5  py-3">
+                <div class="single-user-candidate">
+                    <div class="user-detail-info text-center">
+                        <div class="user-pic">
+                            <img src="../resources/user/images/b2.jpg" class="img-fluid rounded-circle" alt="" />
+                        </div>
+                        <br/>
+                         <div class="form-horizontal">
+                         <center>
+<h:form id="form">
+<h:panelGrid columns="2">
+<h:outputText value="requested-profil" />
+<h:inputText value="#{consommationbean.r}" />
+<h:outputText value="years of experience" />
+<h:inputText value="#{consommationbean.r1}" />
+<h:outputText value="education" />
+<h:inputText value="#{consommationbean.r2}" />
+<h:outputText value="manager" />
+<h:inputText value="#{consommationbean.r3}" />
+<h:outputText value="deposite-date" />
+<h:inputText t:type="date" value="#{consommationbean.r4}" >
+
+ 
+</h:inputText>
+<h:outputText value="deposite-hour" />
+<h:inputText t:type="date" value="#{consommationbean.r5}" >
+</h:inputText>
+<h:outputText value="start-date-mandate" />
+<h:inputText t:type="date" value="#{consommationbean.r6}" >
+
+</h:inputText>
+<h:outputText value="end-date-mandate" />
+<h:inputText t:type="date" value="#{consommationbean.r7}" >
+  
+</h:inputText>
+
+
+
+<h:commandButton id="btn" action="#{consommationbean.ajoutrequest()}" value="Add" />
+<f:param name="clientid" value="#{loginIdentity.user.id}" />
+<h:message for="btn"/>
+
+
+</h:panelGrid>
+</h:form>
+</center>
+</div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>
