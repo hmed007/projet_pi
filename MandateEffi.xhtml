@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/template/template.xhtml">
+	  
+	   
+	
+	<h:head>
+		<style type="text/css">
+     .value {
+        font-weight: bold;
+    }
+     
+    .ui-carousel {
+        margin-bottom: 20px;
+    }
+</style>
+	</h:head>
+	<h:body>
+	<h:form id="form">
+    <p:carousel value="#{consommationBean.getAllMandates}" headerText="Responsive" 
+    var="mandate" itemStyle="text-align:center" responsive="true">
+        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+            <f:facet name="header">
+            </f:facet>
+ 
+            <h:outputText value="Id Mandate:" />
+            <h:outputText value="#{mandate.mandateId}" />
+            
+            <h:outputText value="Start Date:" />
+            <h:outputText value="#{mandate.start_date}" />
+ 
+            <h:outputText value="End Date" />
+            <h:outputText value="#{mandate.endDate}" />
+ 
+            <h:outputText value="actual End Date" />
+            <h:outputText value="#{mandate.actualEndDate}" />
+            
+            
+            <h:outputText value="Efficiency" />
+            <h:outputText value="#{consommationBean.getmethodeeffimandate(mandate.mandateId)} %" />
+            
+            
+        </p:panelGrid>
+ 
+        <f:facet name="footer">
+               In total there are #{consommationBean.NumberMandates()} Mandates .
+        </f:facet>
+    </p:carousel>
+
+		</h:form>
+	
+
+	
+	
+		
+
+	 </h:body>
+	 </html>
